@@ -11,7 +11,6 @@ alias powershell='/usr/local/bin/pwsh'
 PATH=/bin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/ucb:/etc:/usr/openwin/bin:/usr/sbin:
 #PATH=~/Library/Python/3.6/bin:$PATH
 PATH=$PATH:~/Source/terraform:~/Source/terragrunt
-REQUESTS_CA_BUNDLE=/Users/nicholsry/Documents/certnew.cer
 
 export PATH EDITOR TERM REQUESTS_CA_BUNDLE
 
@@ -60,20 +59,6 @@ function parse_git_dirty {
   else
     echo ""
   fi
-}
-
-##
-# Setup AWS envs
-##
-export AWSUSER="nicholsry"
-export AWSPW=""
-function ac {
-    echo "Please enter the account name:"
-    read acct
-    if [[ $acct == "appdev" ]]; then
-      export AWSACCTNAME="mkglobalappdev"
-      export AWSACCTNUM="514248975949"
-    fi
 }
 
 PS1="\u@\h\-W% \[\e[32m\]\`parse_git_branch\`\[\e[m\]: "
